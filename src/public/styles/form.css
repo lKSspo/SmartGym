@@ -1,7 +1,10 @@
+* {
+    font: 400 1rem Roboto, sans-serif;
+}
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #0a0a0a;
+    background-color: black;
 }
 
 form {
