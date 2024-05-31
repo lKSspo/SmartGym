@@ -1,0 +1,163 @@
+* {
+    font: 400 1rem Roboto, sans-serif;
+    
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 8px;
+}
+
+p {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+}
+
+a:hover {
+    color: rgb(116, 72, 116);
+}
+
+.main {
+    color: white;
+    width: 756px;
+    height: 514px;
+    padding: 100px;
+    border-radius: 30px;
+    border: 2px solid #fff;
+    background-color: black;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5rem;
+}
+
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 40px;
+}
+
+.label-altura {
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    background: black;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.label-peso{
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    background: black;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.label-objective {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    background: black;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.input-altura {
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #fff;
+    background: black;
+    color: white;
+    outline: none;
+}
+
+.input-peso {
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #fff;
+    background: black;
+    color: white;
+    outline: none;
+    margin-top: 20px;
+}
+
+.input-objective {
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #fff;
+    background: black;
+    color: white;
+    outline: none;
+    margin-top: 40px;
+}
+
+.button-next {
+    margin-top: 8.25rem;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    right: 5.25rem;
+}
+
+.button {
+    background-color: #fff;
+    color: black;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 185px;
+    font-size: 1rem;
+    position: fixed;
+}
+
+.button:hover {
+    background-color: #ccc;
+}
+
+.button-back {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.link-login {
+    margin-top: 20px;
+}
+
+.icon-back {
+    font-size: 30px;
+    color: #73a8ee;  
+}
