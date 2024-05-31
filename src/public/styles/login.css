@@ -41,7 +41,17 @@ form {
     height: 40px;
 }
 
-label {
+.label-password {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+    background: black;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.label-email {
     position: absolute;
     top: -7px;
     left: 50px;
@@ -51,7 +61,20 @@ label {
     color: #fff;
 }
 
-input[type="email"], input[type="password"] {
+.input-password {
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #fff;
+    background: black;
+    color: white;
+    outline: none;
+
+    
+    margin-top: 25px;
+}
+
+.input-email {
     border-radius: 30px;
     width: 100%;
     padding: 15px 20px;
@@ -62,10 +85,10 @@ input[type="email"], input[type="password"] {
 }
 
 .icon-eye {
-    font-size: 20px;
+    font-size: 25px;
     position: absolute;
-    right: 15px;
-    top: 65%;
+    top: 54px;
+    right: 0;
     transform: translateY(-60%);
     color: #fff;
     cursor: pointer;

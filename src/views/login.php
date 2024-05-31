@@ -19,12 +19,12 @@
         <form action="../controllers/AuthController.php" method="POST">
             <h1>Acesse sua conta</h1>
             <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
+                <label class="label-email"for="email">E-mail</label>
+                <input class="input-email" type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
+                <label class="label-password" for="password">Senha</label>
+                <input class="input-password" type="password" id="password" name="password" required>
                 <span>
                     <ion-icon class="icon-eye" name="eye-outline" id="icon-visible" onclick="togglePasswordVisibility()"></ion-icon>
                 </span>
