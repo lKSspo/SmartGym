@@ -6,8 +6,8 @@
             $this -> connection = $connection;
         }
 
-        public function create($name, $email, $password) {
-            $result = $this -> connection -> prepare("INSERT INTO users (name, email, password) VALUES ('$name','$email', '$password')");
+        public function create($name, $email, $password, $height, $peso, $current_objective) {
+            $result = $this -> connection -> prepare("INSERT INTO users (name, email, password, height, peso, current_objective ) VALUES ('$name','$email', '$password', $height, $peso, $current_objective)");
             return $result -> execute();
         }
 
