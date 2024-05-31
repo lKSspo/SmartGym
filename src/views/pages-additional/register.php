@@ -20,7 +20,7 @@
     </div> 
     <div class="main">
         <form action="../controllers/AuthController.php" method="POST">
-            <h1>Crie sua conta</h1>
+            <h1>Cadastre suas Informações Adicionais</h1>
             <div class="form-group">
                 <label class="label-altura" for="altura">Altura:</label>
                 <input class="input-altura" type="number" id="altura" name="height" required>
