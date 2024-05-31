@@ -13,7 +13,11 @@
     <title>Cadastra-se</title>
 </head>
 <body>
-<div class="container">
+   
+<div>
+    <div>
+        <img src="../public/assets/icon.png" alt="">
+    </div> 
     <div class="main">
         <form action="../controllers/AuthController.php" method="POST">
             <h1>Crie sua conta</h1>
