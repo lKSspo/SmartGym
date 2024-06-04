@@ -1,35 +1,22 @@
-<?php
-session_start();
-// print_r($_SESSION);
-
-// Caso não existir uma sessão com email ou password ele retornará para tela de login 
-if ((!isset($_SESSION['email']) === true) && (!isset($_SESSION['password']) === true)) {
-    unset($_SESSION['email']);
-    unset($_SESSION['password']);
-    header('Location: login.php');
-    exit();
-}
-
-// Pegando o email e nome da sessão
-$logado = $_SESSION['email'];
-$nome = $_SESSION['name'];
-
-// Pegando a primeira letra do nome
-$primeiraLetra = strtoupper(substr($nome, 0, 1));
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/styles/account.css">
-    <title>Account</title>
+    <title>SmartTech</title>
+    <link rel="stylesheet" href="../public/styles/form.css">
 </head>
 <body>
-    <div>
-        <div class="icone"><?php echo $primeiraLetra; ?></div>
-        <a href="../controllers/AuthController.php?action=logout">Sair</a>
+    <div class="header">
+        <div class="left-buttons">
+            <button type="button" class="button">Home</button>
+            <button type="button" class="button">Treinos</button>
+            <button type="button" class="button">Contato</button>
+        </div>
+        <div class="right-buttons">
+            <button type="button" class="button button-cadastro" onclick="window.location.href='./form.php'">Cadastro</button>
+            <button type="button" class="button button-login" onclick="window.location.href='./login.php'">Login</button>
+        </div>
     </div>
 </body>
 </html>

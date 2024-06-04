@@ -1,10 +1,32 @@
 * {
     font: 400 1rem Roboto, sans-serif;
+    
 }
 
 body {
-    font-family: Arial, sans-serif;
     background-color: black;
+    overflow: hidden;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 8px;
+}
+
+p {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+}
+
+a:hover {
+    color: rgb(116, 72, 116);
 }
 
 .main {
@@ -29,21 +51,16 @@ h1 {
     margin-bottom: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
 .form-group {
     position: relative;
     margin-bottom: 20px;
-    width: 523px;
+    width: 100%;
     height: 40px;
 }
 
-.label-password {
+.label-name {
     position: absolute;
-    top: 15px;
+    top: -10px;
     left: 50px;
     background: black;
     padding: 0 10px;
@@ -53,7 +70,7 @@ form {
 
 .label-email {
     position: absolute;
-    top: -7px;
+    top: 10px;
     left: 50px;
     background: black;
     padding: 0 10px;
@@ -61,7 +78,17 @@ form {
     color: #fff;
 }
 
-.input-password {
+.label-password {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    background: black;
+    padding: 0 10px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.input-name {
     border-radius: 30px;
     width: 100%;
     padding: 15px 20px;
@@ -69,9 +96,6 @@ form {
     background: black;
     color: white;
     outline: none;
-
-    
-    margin-top: 25px;
 }
 
 .input-email {
@@ -82,20 +106,52 @@ form {
     background: black;
     color: white;
     outline: none;
+    margin-top: 20px;
+}
+
+.input-password {
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #fff;
+    background: black;
+    color: white;
+    outline: none;
+    margin-top: 40px;
+}
+
+.input-checkbox {
+    color: white;
+    outline: none;
+    margin-top: 50px;
+}
+
+.password-wrapper {
+    position: relative;
+    width: 100%;
 }
 
 .icon-eye {
-    font-size: 25px;
-    position: absolute;
-    top: 54px;
-    right: 0;
-    transform: translateY(-60%);
+    font-size: 20px;
     color: #fff;
+    position: absolute;
+    right: 15px;
+    top: 4.0625rem;
+    transform: translateY(-50%);
     cursor: pointer;
 }
 
+.button-next {
+    margin-top: 8.25rem;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    right: 5.25rem;
+}
+
 .button {
-    margin-top: 20px;
     background-color: #fff;
     color: black;
     border: none;
@@ -104,34 +160,20 @@ form {
     border-radius: 30px;
     width: 185px;
     font-size: 1rem;
+    position: fixed;
 }
 
 .button:hover {
     background-color: #ccc;
 }
 
-.forgot-password {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.forgot-password button {
-    background-color: #fff;
-    color: black;
-    border: none;
-    padding: 10px 20px;
+.button-back {
     cursor: pointer;
-    border-radius: 30px;
-    font-size: 1rem;
+    background: none;
+    border: none;
 }
 
-.forgot-password a {
-    color: white;
-    text-decoration: none;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
+.icon-back {
+    font-size: 30px;
+    color: #73a8ee;  
 }

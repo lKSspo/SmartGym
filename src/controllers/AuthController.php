@@ -15,8 +15,11 @@
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $password = $_POST['password'];
+                $height = $_POST['height'];
+                $peso = $_POST['peso'];
+                $current_objective = $_POST['objective'];
 
-                if ($this -> userModel -> create($name, $email, $password)) {
+                if ($this -> userModel -> create($name, $email, $password, $height, $peso, $current_objective)) {
                     $_SESSION['name'] = $name;
                     $_SESSION['email'] = $email;
                     header("Location: ../views/account.php");
