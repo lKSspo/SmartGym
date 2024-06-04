@@ -107,7 +107,7 @@ form {
 }
 
 .button:hover {
-    background-color: #ccc;
+    background-color: #8d8c8c;
 }
 
 .forgot-password {
@@ -134,4 +134,9 @@ form {
 
 .forgot-password a:hover {
     text-decoration: underline;
+}
+
+
+.link-login {
+    margin-top: 10px;
 }

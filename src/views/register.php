@@ -48,7 +48,7 @@
             </div>
         </form>
         <div class="button-next">
-            <button class="button" type="submit" name="submit" value="register">Continuar</button>
+            <button class="button" type="submit" name="submit" value="register" onclick="window.location.href='./pages-additional/register.php'">Continuar</button>
         </div> 
     </div>
 </div>
