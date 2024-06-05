@@ -29,7 +29,11 @@
                     <ion-icon class="icon-eye" name="eye-outline" id="icon-visible" onclick="togglePasswordVisibility()"></ion-icon>
                 </span>
             </div>
+            <div class="link-login">
+                <p>Não possui cadastro? <a href="../views/register.php">Clique aqui👈</a></p>
+            </div>
             <div class="forgot-password">
+                
                 <button class="button" type="submit" name="submit" value="login">
                     Entrar
                 </button>
