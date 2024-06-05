@@ -16,27 +16,38 @@
         <img src="../public/assets/icon.png" alt="">
     </div>
     <div class="main">
+
         <form action="../controllers/AuthController.php" method="POST">
             <h1>Acesse sua conta</h1>
+
             <div class="form-group">
+
                 <label class="label-email"for="email">E-mail</label>
                 <input class="input-email" type="email" id="email" name="email" required>
+
             </div>
+
             <div class="form-group">
                 <label class="label-password" for="password">Senha</label>
+
                 <input class="input-password" type="password" id="password" name="password" required>
+
                 <span>
                     <ion-icon class="icon-eye" name="eye-outline" id="icon-visible" onclick="togglePasswordVisibility()"></ion-icon>
                 </span>
+
             </div>
+
             <div class="link-login">
                 <p>Não possui cadastro? <a href="../views/register.php">Clique aqui👈</a></p>
             </div>
+
             <div class="forgot-password">
                 
                 <button class="button" type="submit" name="submit" value="login">
                     Entrar
                 </button>
+                
                 <a href="#">Esqueci minha senha</a>
             </div>
         </form>

@@ -30,26 +30,30 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
 </head>
 <body>
     <div class="video-container">
-    <video autoplay muted loop class="video-background">
-        <source src="../public/assets/workout.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+        <video autoplay muted loop class="video-background">
+            <source src="../public/assets/workout.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
+
     <div>
         <div class="icone"><?php echo $primeiraLetra; ?></div>
-    </div>        
+    </div>    
+
     <div class="header">
         
         <div class="left-buttons">
             <button type="button" class="glow-on-hover">Treino</button>
+
+            <button type="button" class="glow-on-hover">Receita</button>
+
             <button type="button" class="glow-on-hover" onclick="window.location.href='./recipe.php'">Receita</button>
+
             <button type="button" class="glow-on-hover">Aulas Coletivas</button>
+
             <button type="button" class="glow-on-hover">Contato</button>
         </div>
-        <!-- <div class="right-buttons">
-            <button type="button" class="button button-cadastro" onclick="window.location.href='./form.php'">Cadastro</button>
-            <button type="button" class="button button-login" onclick="window.location.href='./login.php'">Login</button>
-        </div> -->
+        
         <img scr="../public/assets/image 5.png" aut="" >
     </div>
 </body>
