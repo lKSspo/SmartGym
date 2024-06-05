@@ -110,15 +110,22 @@ a:hover {
     margin-top: 20px;
 }
 
-.input-objective {
+.select-objective {
     border-radius: 30px;
-    width: 100%;
+    width: 70vh;
     padding: 15px 20px;
     border: 1px solid #fff;
     background: black;
     color: white;
     outline: none;
     margin-top: 40px;
+    -webkit-appearance: none;  /* For Chrome */
+    -moz-appearance: none;     /* For Firefox */
+    appearance: none;          /* For other browsers */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="white" d="M2 0L0 2h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 10px;
 }
 
 .button-next {
@@ -128,6 +135,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     right: 8.25rem;
+    margin-top: 23.125rem;
 }
 
 .button {
@@ -160,3 +168,4 @@ a:hover {
     font-size: 30px;
     color: #73a8ee;  
 }
+
