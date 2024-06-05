@@ -1,0 +1,56 @@
+.select-container {
+    position: relative;
+    display: inline-block;
+}
+.select-style {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #242323;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.select-style:hover {
+    background-color: #1f1e1e; /*Muda a cor ao passar o mouse*/
+    color:white;
+}
+
+.select-style:active {
+    background-color: #515251;
+    color:white;
+    box-shadow: 0 5px #000000;
+    transform: translateY(4px);
+}
+
+.icone {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #2b2d30;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+body, html {
+    height: 100%;
+    margin-top: 50px;
+    display: flex;
+    background: black;
+    justify-content: left;
+    align-items: left;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: left;
+    margin-bottom: 20px;
+}

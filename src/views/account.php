@@ -47,6 +47,8 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
 
             <button type="button" class="glow-on-hover">Receita</button>
 
+            <button type="button" class="glow-on-hover" onclick="window.location.href='./recipe.php'">Receita</button>
+
             <button type="button" class="glow-on-hover">Aulas Coletivas</button>
 
             <button type="button" class="glow-on-hover">Contato</button>
