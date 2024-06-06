@@ -33,7 +33,6 @@ a:hover {
     color: white;
     width: 756px;
     height: 514px;
-    padding: 100px;
     border-radius: 30px;
     border: 2px solid #fff;
     background-color: black;
@@ -42,7 +41,7 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 5rem;
+    padding: 5.2rem;
 }
 
 h1 {
@@ -177,3 +176,17 @@ h1 {
     font-size: 30px;
     color: #73a8ee;  
 }
+
+.forms .form-group {
+    margin-bottom: 25px; /* Ajuste o valor conforme necessário */
+}
+
+.error {
+    color: red; /* Adicione estilo para a classe de erro */
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.form-check {
+    margin-top: 5px;
+} 

@@ -18,27 +18,36 @@
     <div>
         <!-- (restante do conteúdo) -->
         <div class="main">
+                <?php if (isset($_SESSION['errors'])): ?>
+                <ul>
+                    <?php foreach ($_SESSION['errors'] as $error): ?>
+                         <li><?php echo $error; ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php unset($_SESSION['errors']); ?>
+                <?php endif; ?>
+
             <form action="../../controllers/AuthController.php" method="POST">
 
                 <h1>Cadastre suas Informações Adicionais</h1>
 
                 <div class="form-group">
                     <label class="label-altura" for="altura">Altura:</label>
-                    <input class="input-altura" type="number" id="altura" name="height" required>
+                    <input class="input-altura" type="number" id="altura" name="height" >
                 </div>
 
                 <div class="form-group">
                     <label class="label-peso" for="peso">Peso:</label>
-                    <input class="input-peso" type="number" id="peso" name="peso" required>
+                    <input class="input-peso" type="number" id="peso" name="peso" >
                 </div>
 
                 <div class="form-group">
                     <label for="current_objective" class="label-objective" >Objetivo Atual:</label>
-                    <select id="current_objective" name="current_objective" class="select-objective" >
+                    <select id="current_objective" name="current_objective" class="select-objective">
                         <option value="" disabled selected hidden>Selecione uma opção</option>
-                        <option value="current_objective">Ganho de Massa</option>
-                        <option value="current_objective">Ganho de Peso</option>
-                        <option value="current_objective">Perda de Peso</option>
+                        <option>Ganho de Massa</option>
+                        <option>Ganho de Peso</option>
+                        <option>Perda de Peso</option>
                     </select>
                 </div>
 
