@@ -48,7 +48,9 @@ function validateForm(event) {
         validate = false;
         emailError.textContent = 'O email é obrigatório.';
         emailError.style.display = 'block';
-    } else if (!validateEmail(email.value.trim())) {
+    } 
+    
+    if (!validateEmail(email.value.trim())) {
         validate = false;
         emailError.textContent = 'O email é inválido.';
         emailError.style.display = 'block';
@@ -58,7 +60,9 @@ function validateForm(event) {
         validate = false;
         passwordError.textContent = 'A senha é obrigatória.';
         passwordError.style.display = 'block';
-    } else if (password.value.trim().length < 6) {
+    } 
+    
+    if (password.value.trim().length < 6) {
         validate = false;
         passwordError.textContent = 'A senha deve ter pelo menos 6 caracteres.';
         passwordError.style.display = 'block';
