@@ -2,6 +2,7 @@
     position: relative;
     display: inline-block;
 }
+
 .select-style {
     padding: 10px 20px;
     font-size: 16px;
@@ -9,17 +10,17 @@
     border-radius: 15px;
     box-shadow: 0 9px #242323;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 .select-style:hover {
-    background-color: #1f1e1e; /*Muda a cor ao passar o mouse*/
-    color:white;
+    background-color: #1f1e1e; /* Muda a cor ao passar o mouse */
+    color: white;
 }
 
 .select-style:active {
     background-color: #515251;
-    color:white;
+    color: white;
     box-shadow: 0 5px #000000;
     transform: translateY(4px);
 }
@@ -46,11 +47,23 @@ body, html {
     display: flex;
     background: black;
     justify-content: left;
-    align-items: left;
+    align-items: flex-start;
     font-family: Arial, sans-serif;
+    color: white;
 }
 
 header {
     text-align: left;
     margin-bottom: 20px;
+}
+
+/* Estilos para .text-container */
+.text-container {
+    display: none;
+    background-color: black;
+    color: white;
+}
+
+.text-container.selected {
+    display: block;
 }
