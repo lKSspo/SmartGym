@@ -62,14 +62,10 @@ header {
     display: none;
     background-color: black;
     color: white;
-    width: 100px;
-    height: 100px;
 }
 
 .text-container.selected {
     display: block;
+    margin-left: 30px; /*Usado para espaçar o texto exibido apos o select*/
 }
-.recipe-texts{
-    width: 10px;
-    height: 10px;
-}
+  
