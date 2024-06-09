@@ -18,11 +18,11 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/styles/coletive.css">
+    <link rel="stylesheet" href="../public/styles/coletive.css"> 
     <title>aulas coletivas</title>
 </head>
 <body>
-    <div class="icone"><?php echo $primeiraLetra; ?></div> 
+    <div class="icone"><?php echo $primeiraLetra;?></div> 
     
     <div>
         <div class-="container">
@@ -33,11 +33,11 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
             <option value="aula-semana-3">Semana 3</option>
         </select>
     </div>
+    </div>
 
     <!-- Div para exibir o vídeo -->
-    <div id="videoContainer" class="container"></div>
+    <div id="videoContainer" class="video"></div>
 
-    <script src="../views/script/coletive.js"></script>
+    <script src="./script/coletive.js"></script> 
 </body>
 </html>
-
