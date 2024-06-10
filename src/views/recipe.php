@@ -31,7 +31,6 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
     <title>Receita</title>
 </head>
 <body>
-<<<<<<< HEAD
     <div class="icone"> 
         <?php echo $primeiraLetra; ?>
         <!-- Div para a caixa de informações -->
@@ -43,10 +42,6 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
     </div>
     <img src="../public/assets/icon.png" alt="" onclick="window.location.href='../views/account.php'">
     
-=======
-    <div class="icone"><?php echo $primeiraLetra; ?></div> 
-    <img src="../public/assets/icon.png" alt="" class="icon-home" onclick="window.location.href='../views/account.php'">
->>>>>>> 11b9c7a968af9d47cb24d320d2049b355774c89c
     <div>
         <select class="select-style" id="recipeSelect">
             <option value="" disabled selected hidden>Selecione o tipo de receita</option>
