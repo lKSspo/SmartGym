@@ -38,7 +38,6 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
     </div> 
     
     <div>
-        <div class-="container">
         <select class="select-style" id="coletiveSelect">
             <option value="" disabled selected hidden>Selecione a semana</option>
             <option value="aula-semana-1">Semana 1</option>
