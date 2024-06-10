@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="header">
-        <img src="../public/assets/icon.png" alt="">
+        <img src="../public/assets/icon.png" alt="" onclick="window.location.href='../views/account.php'">
         <div class="header-button-icon">
             <!-- <button class="dropdown">TREINO 01 <ion-icon name="chevron-down-outline"></ion-icon></button> -->
             <div class="custom-select-container">
