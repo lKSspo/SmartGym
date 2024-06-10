@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    // print_r($_SESSION);
+
+    // Caso não existir uma sessão com email ou password ele retornará para tela de login 
+    if ((!isset($_SESSION['email']) === true) && (!isset($_SESSION['password']) === true)) {
+        unset($_SESSION['email']);
+        unset($_SESSION['password']);
+        header('Location: login.php');
+        exit();
+    }
+
+    // Pegando o email e nome da sessão
+    $logado = $_SESSION['email'];
+    $nome = $_SESSION['name'];
+
+    // Pegando a primeira letra do nome
+    $primeiraLetra = strtoupper(substr($nome, 0, 1));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +32,15 @@
     <title>Training</title>
 </head>
 <body>
+    <div class="icone"> 
+            <?php echo $primeiraLetra; ?>
+            <!-- Div para a caixa de informações -->
+            <div class="info-box" id="infoBox">
+                <p>Email: <?php echo $logado; ?></p>
+                <p>Nome: <?php echo $nome; ?></p>
+                <a href="../controllers/AuthController.php?action=logout">Sair</a>
+            </div>
+    </div> 
     <div class="header">
         <img src="../public/assets/icon.png" alt="" onclick="window.location.href='../views/account.php'">
         <div class="header-button-icon">
@@ -63,5 +92,6 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./script/training.js"></script>
+    <script src="./script/index.js"></script>
 </body>
 </html>

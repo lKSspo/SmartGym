@@ -21,13 +21,27 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/styles/recipe.css">
     <title>Receita</title>
 </head>
 <body>
-    <div class="icone"><?php echo $primeiraLetra; ?></div> 
-    <img src="../public/assets/icon.png" alt="" class="icon-home" onclick="window.location.href='../views/account.php'">
+    <div class="icone"> 
+        <?php echo $primeiraLetra; ?>
+        <!-- Div para a caixa de informações -->
+        <div class="info-box" id="infoBox">
+            <p>Email: <?php echo $logado; ?></p>
+            <p>Nome: <?php echo $nome; ?></p>
+            <a href="../controllers/AuthController.php?action=logout">Sair</a>
+        </div>
+    </div>
+    <img src="../public/assets/icon.png" alt="" onclick="window.location.href='../views/account.php'">
+    
     <div>
         <select class="select-style" id="recipeSelect">
             <option value="" disabled selected hidden>Selecione o tipo de receita</option>
@@ -133,5 +147,6 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
             });
         });
     </script>
+    <script src="./script/index.js"></script>
 </body>
 </html>
