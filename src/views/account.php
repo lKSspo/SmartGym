@@ -1,21 +1,21 @@
 <?php
-session_start();
-// print_r($_SESSION);
+    session_start();
+    // print_r($_SESSION);
 
-// Caso não existir uma sessão com email ou password ele retornará para tela de login 
-if ((!isset($_SESSION['email']) === true) && (!isset($_SESSION['password']) === true)) {
-    unset($_SESSION['email']);
-    unset($_SESSION['password']);
-    header('Location: login.php');
-    exit();
-}
+    // Caso não existir uma sessão com email ou password ele retornará para tela de login 
+    if ((!isset($_SESSION['email']) === true) && (!isset($_SESSION['password']) === true)) {
+        unset($_SESSION['email']);
+        unset($_SESSION['password']);
+        header('Location: login.php');
+        exit();
+    }
 
-// Pegando o email e nome da sessão
-$logado = $_SESSION['email'];
-$nome = $_SESSION['name'];
+    // Pegando o email e nome da sessão
+    $logado = $_SESSION['email'];
+    $nome = $_SESSION['name'];
 
-// Pegando a primeira letra do nome
-$primeiraLetra = strtoupper(substr($nome, 0, 1));
+    // Pegando a primeira letra do nome
+    $primeiraLetra = strtoupper(substr($nome, 0, 1));
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -36,9 +36,15 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
         </video>
     </div>
 
-    <div>
-        <div class="icone"><?php echo $primeiraLetra; ?></div>
-    </div>    
+    <div class="icone"> 
+        <?php echo $primeiraLetra; ?>
+        <!-- Div para a caixa de informações -->
+        <div class="info-box" id="infoBox">
+            <p>Email: <?php echo $logado; ?></p>
+            <p>Nome: <?php echo $nome; ?></p>
+            <a href="../controllers/AuthController.php?action=logout">Sair</a>
+        </div>
+    </div>   
 
     <div class="header">
         
@@ -54,5 +60,6 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
         
         <img scr="../public/assets/image 5.png" aut="" >
     </div>
+    <script src="./script/index.js"></script>
 </body>
 </html>

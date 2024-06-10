@@ -11,28 +11,7 @@ if ((!isset($_SESSION['email']) === true) && (!isset($_SESSION['password']) === 
 $logado = $_SESSION['email'];
 $nome = $_SESSION['name'];
 $primeiraLetra = strtoupper(substr($nome, 0, 1));
-
-$feedback = '';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $mensagem = $_POST['mensagem'];
-
-    // Validar e limpar os dados (aqui você pode adicionar mais validações conforme necessário)
-
-    // Enviar por Email
-    $to = 'alessandroquintas3@gmail.com';
-    $subject = 'Novo Contato do Site';
-    $body = "Nome: $nome\nEmail: $email\n\nMensagem:\n$mensagem";
-    $headers = "From: $email";
-
-    if (mail($to, $subject, $body, $headers)) {
-        $feedback = "Mensagem enviada por email com sucesso!";
-    } else {
-        $feedback = "Falha ao enviar a mensagem por email.";
-    }
-}
+ 
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Entre em Contato</title>
 </head>
 <body>
-    <div class="icone"><?php echo $primeiraLetra; ?></div> 
+    <div class="icone"> 
+            <?php echo $primeiraLetra; ?>
+            <!-- Div para a caixa de informações -->
+            <div class="info-box" id="infoBox">
+                <p>Email: <?php echo $logado; ?></p>
+                <p>Nome: <?php echo $nome; ?></p>
+                <a href="../controllers/AuthController.php?action=logout">Sair</a>
+            </div>
+    </div> 
+    <img src="../public/assets/icon.png" alt="" onclick="window.location.href='../views/account.php'">
 
     <div class="main">
         <form action="https://api.staticforms.xyz/submit" method="POST" name="dados" onSubmit="return sendEmail();">
@@ -77,5 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
     <script src="./script/contactValidation.js"></script>
+    <script src="./script/index.js"></script>
 </body>
 </html>
