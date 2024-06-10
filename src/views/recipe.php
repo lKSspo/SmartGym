@@ -27,7 +27,7 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
 </head>
 <body>
     <div class="icone"><?php echo $primeiraLetra; ?></div> 
-    
+    <img src="../public/assets/icon.png" alt="" class="icon-home" onclick="window.location.href='../views/account.php'">
     <div>
         <select class="select-style" id="recipeSelect">
             <option value="" disabled selected hidden>Selecione o tipo de receita</option>

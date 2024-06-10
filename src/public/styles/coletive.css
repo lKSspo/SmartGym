@@ -6,9 +6,10 @@
     box-shadow: 0 9px #242323;
     background-color: #ffffff;
     color: black;
-    margin-bottom: 40px; /* Espaço aumentado entre o botão e o vídeo */
-    margin-top: 20px;
+    margin-bottom: 20px; /* Espaço aumentado entre o botão e o vídeo */
+    margin-top: -50px;
     margin-left: 550px;
+    position: fixed;
 }
 
 .select-style:hover {
@@ -45,4 +46,10 @@ body, html {
     align-items: center;
     justify-content: center;
     
+}
+.icon-home {
+    display: inline-block;
+    line-height: 40px;
+    position: fixed;
+    margin-top: -100px;
 }
