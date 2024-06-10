@@ -7,20 +7,14 @@
     background-color: #ffffff;
     color: black;
     margin-bottom: 40px; /* Espaço aumentado entre o botão e o vídeo */
-    position: fixed;
+    margin-top: 20px;
+    margin-left: 550px;
 }
 
 .select-style:hover {
     background-color: #1f1e1e; /* Muda a cor ao passar o mouse */
     color: white;
 }
-
-/* .select-style:active {
-    background-color: #515251;
-    color: white;
-    box-shadow: 0 5px #000000;
-    transform: translateY(4px);
-} */
 
 .icone {
     display: inline-block;
@@ -37,32 +31,18 @@
     top: 10px;
     right: 10px;
 }
-
 body, html {
-    /* height: 100%; */
     margin: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     background: black;
     font-family: Arial, sans-serif;
     color: white;
 }
-/* 
-
-.video-link {
-    color: white;
-    text-decoration: none;
-    margin-bottom: 40px;
-    font-size: 16px;
-    background-color: #1f1e1e;
-    padding: 10px 20px;
-    border-radius: 15px;
-}
-
-.video-link:hover {
-    background-color: #515251;
-} */
 .video{
-    margin-top: 300px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
