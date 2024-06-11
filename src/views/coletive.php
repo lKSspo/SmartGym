@@ -28,14 +28,16 @@ $primeiraLetra = strtoupper(substr($nome, 0, 1));
 </head>
 <body>
     <div class="icone"> 
-        <?php echo $primeiraLetra; ?>
-        <!-- Div para a caixa de informações -->
-        <div class="info-box" id="infoBox">
-            <p>Email: <?php echo $logado; ?></p>
-            <p>Nome: <?php echo $nome; ?></p>
-            <a href="../controllers/AuthController.php?action=logout">Sair</a>
-        </div>
+            <?php echo $primeiraLetra; ?>
+            <!-- Div para a caixa de informações -->
+            <div class="info-box" id="infoBox">
+                <p>Email: <?php echo $logado; ?></p>
+                <p>Nome: <?php echo $nome; ?></p>
+                <a href="../controllers/AuthController.php?action=logout">Sair</a>
+            </div>
     </div> 
+
+    <img src="../public/assets/icon.png" alt="" onclick="window.location.href='../views/account.php'">
     
     <div>
         <select class="select-style" id="coletiveSelect">
