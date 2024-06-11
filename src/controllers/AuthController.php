@@ -83,9 +83,9 @@ class AuthController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
-
+            
             $user = $this->userModel->findByEmail($email);
-
+    
             if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['name'] = $user['name'];

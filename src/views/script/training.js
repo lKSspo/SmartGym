@@ -1,83 +1,155 @@
-const sliderButton = document.querySelector('.slider-button');
+const selectElement = document.getElementById('treinoSelect');
+const exerciseName = document.getElementById('exerciseName');
+const exerciseImage = document.getElementById('exerciseImage');
+const repsElement = document.querySelector('.reps span');
+const weightElement = document.querySelector('.weight span');
 const slider = document.querySelector('.slider');
+const paginationDots = document.querySelectorAll('.pagination .dot');
+const endTrainingButton = document.getElementById('end-training');
 
-let isDragging = false;
-let startX, offsetX;
+let currentSeries = 0; // Série atual
+const totalSeries = 3; // Total de séries
 
-sliderButton.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    offsetX = sliderButton.offsetLeft;
-    sliderButton.style.transition = 'none'; // Disable transition during drag
-});
+// Contadores de treinos concluídos para cada tipo de treino
+let completedTrainings = {
+    'LEG PRESS 45°': 0,
+    'Flexão de Braço': 0,
+    'Agachamento Livre': 0
+};
 
-document.addEventListener('mouseup', () => {
-    if (isDragging) {
-        isDragging = false;
-        sliderButton.style.transition = 'left 0.3s ease'; // Re-enable transition after drag
-        if (sliderButton.offsetLeft >= (slider.clientWidth - sliderButton.clientWidth - 10)) {
-            alert('Próxima série clicked!');
-        } else {
-            sliderButton.style.left = '0';
-        }
+const exerciseData = {
+    'LEG PRESS 45°': {
+        image: '../public/assets/leg-press-45.jpg',
+        alt: 'Leg Press',
+        reps: 10,
+        weight: 65.0
+    },
+    'Flexão de Braço': {
+        image: '../public/assets/flexoes-braço.jpg',
+        alt: 'Flexão de Braço',
+        reps: 15,
+        weight: 10.0
+    },
+    'Agachamento Livre': {
+        image: '../public/assets/agachamento-livre.jpeg',
+        alt: 'Agachamento Livre',
+        reps: 10,
+        weight: 70.0
     }
-});
+};
 
-document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        const sliderRect = slider.getBoundingClientRect();
-        const buttonWidth = sliderButton.clientWidth;
-        let newLeft = offsetX + (e.clientX - startX);
-
-        if (newLeft < 0) {
-            newLeft = 0;
-        } else if (newLeft > (slider.clientWidth - buttonWidth - 10)) {
-            newLeft = slider.clientWidth - buttonWidth - 10;
-        }
-
-        sliderButton.style.left = newLeft + 'px';
-    }
-});
-
-document.addEventListener('mouseleave', () => {
-    if (isDragging) {
-        isDragging = false;
-        sliderButton.style.transition = 'left 0.3s ease'; // Re-enable transition after drag
-        sliderButton.style.left = '0';
-    }
-});
-
-
-
-const treinos = [
-    'TREINO 01: Abdominal Canivete',
-    'TREINO 02: Flexão de Braço',
-    'TREINO 03: Agachamento Livre',
-    'TREINO 04: Levantamento Terra',
-    'TREINO 05: Barra Fixa',
-    'TREINO 06: Prancha Abdominal',
-    'TREINO 07: Corrida Intervalada',
-    'TREINO 08: Burpees',
-    'TREINO 09: Supino',
-    'TREINO 10: Remada Curvada'
-];
-
-// Função para preencher a lista de treinos
-function preencherDropdown() {
-    const dropdownContent = document.getElementById('dropdownContent');
-    treinos.forEach(treino => {
-        const a = document.createElement('a');
-        a.textContent = treino;
-        a.href = '#'; // Pode ser alterado para um link real se necessário
-        dropdownContent.appendChild(a);
-    });
+// Função para atualizar os dados do exercício
+function updateExerciseData(selectedOption) {
+    const data = exerciseData[selectedOption];
+    exerciseImage.src = data.image;
+    exerciseImage.alt = data.alt;
+    repsElement.textContent = data.reps;
+    weightElement.textContent = data.weight;
 }
 
-// Mostrar/ocultar a lista de treinos ao clicar no botão
-document.querySelector('.dropdown').addEventListener('click', () => {
-    const dropdownContent = document.getElementById('dropdownContent');
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+// Função para atualizar a página de acordo com a série atual
+// Função para atualizar a página de acordo com a série atual
+// Função para atualizar a página de acordo com a série atual
+function updatePagination() {
+    paginationDots.forEach((dot, index) => {
+        if (index === currentSeries) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+
+    // Destacar a primeira bolinha quando a primeira série estiver concluída
+    if (currentSeries === 1) {
+        paginationDots[0].classList.add('completed');
+    }
+
+    // Verificar se todas as séries do terceiro exercício foram concluídas antes de habilitar o botão de encerrar treino
+    const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+    if (selectedOption === 'Agachamento Livre' && completedTrainings[selectedOption] === totalSeries) {
+        endTrainingButton.removeAttribute('disabled');
+        endTrainingButton.style.display = 'block';
+    } else {
+        endTrainingButton.setAttribute('disabled', 'disabled');
+        endTrainingButton.style.display = 'none';
+    }
+}
+
+selectElement.addEventListener('change', (e) => {
+    const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+    exerciseName.textContent = selectedOption;
+    updateExerciseData(selectedOption);
+    currentSeries = 0; // Reinicia a série ao trocar de exercício
+    updatePagination();
+    endTrainingButton.style.display = 'none'; // Esconde o botão de encerrar treino ao trocar de exercício
 });
 
-// Preencher a lista de treinos ao carregar a página
-window.onload = preencherDropdown;
+slider.addEventListener('click', () => {
+    const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+
+    if (currentSeries < totalSeries - 1) {
+        currentSeries++;
+        updatePagination();
+        alert(`Você terminou a série ${currentSeries + 1}`);
+    } else {
+        // Incrementa o contador de treinos concluídos para o tipo de treino atual
+        completedTrainings[selectedOption]++;
+        updatePagination();
+        alert(`Parabéns! Você concluiu o ${selectedOption}.`);
+        
+        // Verifica se há mais exercícios para mostrar
+        const nextExerciseIndex = selectElement.selectedIndex + 1;
+        if (nextExerciseIndex < selectElement.options.length) {
+            // Se houver, seleciona o próximo exercício
+            selectElement.selectedIndex = nextExerciseIndex;
+            const nextSelectedOption = selectElement.options[nextExerciseIndex].value;
+            exerciseName.textContent = nextSelectedOption;
+            updateExerciseData(nextSelectedOption);
+            currentSeries = 0; // Reinicia a série ao trocar de exercício
+            updatePagination();
+            alert('Ir para o próximo treino');
+        } else {
+            // Se não houver mais exercícios, exibe o botão de encerrar treino
+            endTrainingButton.style.display = 'block' 
+            
+        }
+
+        
+    }
+});
+
+
+endTrainingButton.addEventListener('click', () => {
+    // Verifica se todos os treinos foram concluídos
+    let allTrainingsCompleted = true;
+    for (const training in completedTrainings) {
+        if (completedTrainings[training] < totalSeries) {
+            allTrainingsCompleted = false;
+            break;
+        }
+    }
+
+    // Se todos os treinos foram concluídos, exibe o alerta
+    if (allTrainingsCompleted) {
+        alert("Parabéns! Você concluiu todos os exercícios.");
+    } else {
+        alert("Você precisa concluir todos os exercícios antes de encerrar o treino.");
+    }
+});
+
+function messageFinal() {
+    alert("Treino finalizado com sucesso")
+}
+
+document.getElementById('end-training').addEventListener('click', messageFinal);
+
+
+
+// Set initial values
+const initialData = exerciseData[selectElement.value];
+exerciseName.textContent = selectElement.value;
+exerciseImage.src = initialData.image;
+exerciseImage.alt = initialData.alt;
+repsElement.textContent = initialData.reps;
+weightElement.textContent = initialData.weight;
+updatePagination();
