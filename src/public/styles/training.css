@@ -300,8 +300,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.slider-button:hover {
-    background: #f0f0f0;
+.slider:hover {
+    background: #6a11cb;
 }
 
 .icon-slider-button {
@@ -314,8 +314,8 @@ body {
     text-align: center;
     color: #fff;
     font-weight: bold;
-    margin-left: 2.875rem;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .pagination {
@@ -363,6 +363,9 @@ body {
 .end-training ion-icon {
     margin-right: 5px;
     font-weight: bold;
+}
+.pagination .dot.active {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
 }
 
 /* .icon-clock {
