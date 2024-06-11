@@ -1,5 +1,5 @@
 <?php
-class Validation {
+class Validation { /*Validações dos campos Nome, Email e senha*/
     public function validateRegister($name, $email, $password) {
         $errors = [];
 
@@ -19,7 +19,7 @@ class Validation {
     }
 
     public function validateAdditional($height, $peso, $current_objective) {
-        $errors = [];
+        $errors = []; /*Validação do formulario adicional*/ 
 
         if (!is_numeric($height) || $height <= 0) {
             $errors['height'] = "A altura deve ser um número positivo.";

@@ -1,7 +1,10 @@
-<?php
+<?php 
+/*Iniciando sessão*/ 
 session_start();
-require_once '../config.php';
-require_once '../models/User.php';
+
+/*linkando os arquivos externos*/ 
+require_once '../config.php'; /**/ 
+require_once '../models/User.php';/**/
 require_once '../helpers/Validation.php';
 
 class AuthController {

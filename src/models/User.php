@@ -17,7 +17,7 @@ class User {
         return $stmt->execute();  // Executa a declaração preparada
     }
 
-    public function findByEmail($email) {
+    public function findByEmail($email) { /*Função para referenciar a busca de um email existente*/ 
         
         $stmt = $this->connection->prepare("SELECT * FROM users WHERE email = ?"); // Prepara uma declaração SQL para seleção de dados
 
